@@ -1,20 +1,56 @@
 /* ESTILOS DEL LOADER PARA PRINCIPAL.HTML */
 
 /* CONTENEDOR PRINCIPAL DEL LOADER */
-.loader-container {
+#particles-canvas {
+    width: 100%;
+    height: 100%;
     position: fixed;
     top: 0;
     left: 0;
+}
+#mobile_menu {
+    display: none;
+}
+@media (max-width: 768px) {
+    #mobile_menu {
+        display: block;
+    }
+    .templatemo-nav {
+        display: none;
+    }
+    .menu-holder {
+        flex-direction: column;
+    }
+}
+
+.social-buttons-container {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.Btn, .social-button a {
+    width: 60px;
+    height: 60px;
+}
+.Btn:hover {
+    width: 130px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.loader-container {
     width: 100vw;
     height: 100vh;
-    z-index: 99999; /* Muy alto para estar sobre todo */
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #000;
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.8s ease, visibility 0.9s ease;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
 }
 
 .loader-container.fade-out {
@@ -32,12 +68,31 @@
     overflow: hidden;
     z-index: 1;
 }
+.progress-container {
+    width: 80%;
+    max-width: 400px;
+}
+.progress-bar {
+    height: 10px;
+}
+.spinner-ring {
+    width: 40px;
+    height: 40px;
+}
+@media (max-width: 768px) {
+    .spinner-ring {
+        width: 30px;
+        height: 30px;
+    }
+    .progress-text {
+        font-size: 0.8em;
+    }
+}
 
 .video-background video {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    filter: brightness(0.4) contrast(1.2);
+    object-fit: cover; /* Mantiene proporción y ocupa todo el contenedor */
 }
 
 /* OVERLAY OSCURO SOBRE EL VIDEO */
@@ -223,6 +278,13 @@
     opacity: 1;
     visibility: visible;
 }
+#mainVideo {
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    max-height: 680px;
+}
+
 
 /* Asegurar que el body no tenga scroll durante el loader */
 body.loading {
@@ -340,5 +402,22 @@ body.loading {
 
     .spinner-ring {
         animation: spinnerRotate 2s linear infinite;
+    }
+}
+@media (max-width: 768px) {
+    .video-background {
+        display: none;
+    }
+    .loader-content h1 {
+        font-size: 1.5em;
+    }
+}
+h1 {
+    font-size: 2.5vw; /* ajusta automáticamente al ancho de pantalla */
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 5vw;
     }
 }

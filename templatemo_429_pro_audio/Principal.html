@@ -584,6 +584,22 @@
     
     <!-- Script para controlar el audio con el toggle -->
     <script>
+        document.getElementById('mobile_menu').addEventListener('click', function(){
+            const nav = document.querySelector('.templatemo-nav');
+            if(nav.style.display === 'block') nav.style.display = 'none';
+            else nav.style.display = 'block';
+        });
+
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loaderContainer');
+            const mainContent = document.getElementById('mainPageContent');
+            loader.style.display = 'none';
+            mainContent.style.display = 'block';
+        });
+        this.config.particleCount = window.innerWidth < 768 ? 30 : 80;
+
+
+
         document.addEventListener('DOMContentLoaded', function() {
             const audioToggle = document.getElementById('audioToggle');
             const mainAudio = document.getElementById('mainAudio');
