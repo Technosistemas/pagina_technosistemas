@@ -1,0 +1,344 @@
+/* ESTILOS DEL LOADER PARA PRINCIPAL.HTML */
+
+/* CONTENEDOR PRINCIPAL DEL LOADER */
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99999; /* Muy alto para estar sobre todo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.8s ease, visibility 0.9s ease;
+}
+
+.loader-container.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* VIDEO BACKGROUND */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4) contrast(1.2);
+}
+
+/* OVERLAY OSCURO SOBRE EL VIDEO */
+.loader-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(102, 126, 234, 0.3) 50%,
+        rgba(118, 75, 162, 0.3) 100%
+    );
+    z-index: 2;
+}
+
+/* CONTENIDO DEL LOADER */
+.loader-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: white;
+    max-width: 500px;
+    padding: 40px;
+}
+
+/* LOGO Y TÍTULO */
+.loader-logo h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    background: linear-gradient(45deg, #fff, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+.loader-logo p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    animation: fadeInUp 1s ease 0.5s both;
+}
+
+/* BARRA DE PROGRESO */
+.progress-container {
+    margin: 30px 0;
+    animation: fadeInUp 1s ease 1s both;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea, #764ba2, #667eea);
+    background-size: 200% 100%;
+    border-radius: 10px;
+    width: 0%;
+    transition: width 0.3s ease;
+    animation: progressShine 2s linear infinite;
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.6);
+}
+
+.progress-text {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* SPINNER ANIMADO */
+.loader-spinner {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 30px auto;
+    animation: fadeInUp 1s ease 1.5s both;
+}
+
+.spinner-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 3px solid transparent;
+    border-top: 3px solid #667eea;
+    border-radius: 50%;
+    animation: spinnerRotate 1s linear infinite;
+}
+
+.spinner-ring:nth-child(2) {
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    left: 5%;
+    border-top-color: #764ba2;
+    animation-duration: 1.5s;
+    animation-direction: reverse;
+}
+
+.spinner-ring:nth-child(3) {
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+    border-top-color: rgba(255, 255, 255, 0.6);
+    animation-duration: 2s;
+}
+
+/* MENSAJE DINÁMICO */
+.loading-message {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-top: 25px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    animation: fadeInUp 1s ease 2s both, messageGlow 2s ease-in-out infinite alternate;
+    transition: opacity 0.3s ease;
+}
+
+/* BOTÓN SKIP */
+.skip-btn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    font-size: 0.9rem;
+    font-family: 'Open Sans', sans-serif;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.skip-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.skip-btn i {
+    font-style: normal;
+    transition: transform 0.3s ease;
+}
+
+.skip-btn:hover i {
+    transform: translateX(3px);
+}
+
+/* CONTENIDO PRINCIPAL DE LA PÁGINA */
+.main-page-content {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.main-page-content.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Asegurar que el body no tenga scroll durante el loader */
+body.loading {
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* ANIMACIONES */
+@keyframes titleGlow {
+    0% { 
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); 
+    }
+    100% { 
+        text-shadow: 2px 2px 20px rgba(102, 126, 234, 0.6), 0 0 30px rgba(118, 75, 162, 0.4); 
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes progressShine {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+@keyframes spinnerRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes messageGlow {
+    0% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .loader-content {
+        padding: 30px 20px;
+        max-width: 90%;
+    }
+
+    .loader-logo h1 {
+        font-size: 2.8rem;
+    }
+
+    .loader-logo p {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .loader-spinner {
+        width: 60px;
+        height: 60px;
+        margin: 20px auto;
+    }
+
+    .skip-btn {
+        top: 20px;
+        right: 20px;
+        padding: 10px 16px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .loader-logo h1 {
+        font-size: 2.2rem;
+    }
+
+    .loader-logo p {
+        font-size: 0.9rem;
+    }
+
+    .progress-text {
+        font-size: 1rem;
+    }
+
+    .loading-message {
+        font-size: 0.9rem;
+    }
+
+    .skip-btn {
+        top: 15px;
+        right: 15px;
+        padding: 8px 12px;
+    }
+}
+
+.info{
+    font-size: 30px;
+}
+
+/* OPTIMIZACIÓN PARA DISPOSITIVOS CON POCO RENDIMIENTO */
+@media (prefers-reduced-motion: reduce) {
+    .loader-container *,
+    .progress-fill,
+    .spinner-ring,
+    .loader-logo h1,
+    .loading-message {
+        animation: none !important;
+    }
+    
+    .progress-fill {
+        background: linear-gradient(90deg, #667eea, #764ba2);
+    }
+
+    .spinner-ring {
+        animation: spinnerRotate 2s linear infinite;
+    }
+}

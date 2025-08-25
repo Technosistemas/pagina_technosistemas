@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<head>
+	<!--
+    	Pro Audio
+    -->
+	<title>CONTACTANOS</title>
+	<link rel="icon" type="image/png" href="images/LOGO TIPO 2-Photoroom.png">
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+	<link href="css/font-awesome.min.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="css/templatemo_style.css" rel="stylesheet" type="text/css">
+	
+	<style>
+        /* Estilos para el formulario chimba integrado */
+        .contact-form-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 70vh;
+            position: relative;
+            overflow: hidden;
+            padding: 80px 0;
+            margin-top: 50px;
+        }
+
+        /* Partículas de fondo animadas */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            display: block;
+            pointer-events: none;
+            width: 6px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                opacity: 0;
+                transform: translateY(100vh) scale(0);
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100vh) scale(1);
+            }
+        }
+
+        .form-container-chimba {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 600px;
+            width: 100%;
+            animation: slideInUp 0.8s ease-out;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            margin: 0 auto;
+        }
+
+        .form-container-chimba::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.8s;
+        }
+
+        .form-container-chimba:hover::before {
+            left: 100%;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-title-chimba {
+            text-align: center;
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            animation: glow 2s ease-in-out infinite alternate;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            }
+            to {
+                text-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.3);
+            }
+        }
+
+        .form-subtitle-chimba {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .form-group-chimba {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .form-input-chimba {
+            width: 100%;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            color: white;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .form-input-chimba::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .form-input-chimba:focus {
+            outline: none;
+            border-color: #ffffff;
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        textarea.form-input-chimba {
+            resize: vertical;
+            min-height: 120px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .submit-btn-chimba {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #ff6b6b, #ffa500);
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .submit-btn-chimba::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .submit-btn-chimba:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255, 107, 107, 0.4);
+        }
+
+        .submit-btn-chimba:hover::before {
+            left: 100%;
+        }
+
+        .submit-btn-chimba:active {
+            transform: translateY(0);
+        }
+
+        .submit-btn-chimba.clicked {
+            animation: ripple 0.6s linear;
+        }
+
+        @keyframes ripple {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 40px rgba(255, 107, 107, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
+            }
+        }
+
+        .form-icon-chimba {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .form-input-chimba:focus + .form-icon-chimba {
+            color: white;
+            transform: translateY(-50%) rotate(15deg) scale(1.1);
+        }
+
+        .success-message-chimba {
+            background: rgba(76, 175, 80, 0.9);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .success-message-chimba.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .error-message-chimba {
+            background: rgba(244, 67, 54, 0.9);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .error-message-chimba.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .form-group-chimba {
+            transform: translateZ(0);
+            transition: transform 0.3s ease;
+        }
+
+        .form-group-chimba:hover {
+            transform: translateY(-2px);
+        }
+
+        .decoration-chimba {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+
+        .decoration-1-chimba {
+            top: -50px;
+            right: -50px;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        .decoration-2-chimba {
+            bottom: -50px;
+            left: -50px;
+            animation: pulse 3s ease-in-out infinite 1.5s;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        /* Responsivo */
+        @media (max-width: 600px) {
+            .form-container-chimba {
+                padding: 30px 20px;
+                margin: 10px;
+            }
+            
+            .form-title-chimba {
+                font-size: 2rem;
+            }
+            
+            .contact-form-section {
+                padding: 40px 0;
+            }
+        }
+
+        /* Integración con el tema existente */
+        .templatemo-header .blue {
+            color: #667eea !important;
+        }
+
+        /* Sección de información adicional */
+        .contact-info-section {
+            background: rgba(102, 126, 234, 0.05);
+            padding: 50px 0;
+            margin-top: 0;
+        }
+
+        .contact-info-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-info-icon {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        .contact-info-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .contact-info-text {
+            font-family: 'Open Sans', sans-serif;
+            color: #666;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+	<nav id="responsive-menu">
+        <ul class="menu-holder">
+            <li><a href="Principal.html"><i class="fa fa-home"></i>INICIO</a></li>
+                <li><a href="Quienes somos.html"><i class="fa fa-briefcase"></i>QUIENES SOMOS</a></li>
+                <li><a href="Nuestros servicios.html"><i class="fa fa-cogs"></i>NUESTROS SERVICIOS</a></li>
+                <li><a href="Convenios.html"><i class="fa fa-list"></i>CONVENIOS</a></li>
+                <li><a href="Contacto.html"><i class="fa fa-briefcase"></i>CONTACTO</a></li>
+        </ul>
+    </nav>
+	<div class="templatemo-header">		
+		<div class="templatemo-header-gradient-bg"></div>
+		<div class="container">			
+			<h1 class="text-center text-uppercase templatemo-site-name"><span class="blue">CONTAC</span>TANOS</h1>
+			<nav class="hidden-xs text-center text-uppercase templatemo-nav">
+				<ul class="menu-holder">
+					<li><a href="Principal.html">INICIO</a></li>
+                        <li><a href="Quienes somos.html">QUIENES SOMOS</a></li>
+                        <li><a href="Nuestros servicios.html">NUESTROS SERVICIOS</a></li>
+                        <li><a href="Convenios.html">CONVENIOS</a></li>
+                        <li class="active"><a href="Contacto.html">CONTACTO</a></li>
+				</ul>
+			</nav>
+			<div class="text-right visible-xs">
+	            <a href="#" id="mobile_menu"><span class="fa fa-bars"></span></a>
+	        </div>
+		</div>
+	</div>
+	<div class="templatemo-header-image"></div>
+
+	<img src="images/LOGO-TIPO-TECHNOSISTEMAS.jpg" width="250" height="250" alt="">
+
+</section>		
+		<img src="images/border.png" alt="Border" class="templatemo-border">
+
+	<!-- Sección de información de contacto -->
+	<div class="contact-info-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="contact-info-card">
+						<div class="contact-info-icon">
+							<i class="fa fa-map-marker"></i>
+						</div>
+						<h3 class="contact-info-title">Nuestra Ubicación</h3>
+						<p class="contact-info-text">
+							CALLE 70 BIS SUR 17 N 20<br>
+							Bogotá D.C., Colombia<br>
+							
+						</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="contact-info-card">
+						<div class="contact-info-icon">
+							<i class="fa fa-phone"></i>
+						</div>
+						<h3 class="contact-info-title">Teléfonos</h3>
+						<p class="contact-info-text">
+							+57 (313) 419-9823<br>
+							+57 (318) 152-9063<br>
+                            +57 (318) 671-1378<br>
+							
+						</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="contact-info-card">
+						<div class="contact-info-icon">
+							<i class="fa fa-envelope"></i>
+						</div>
+						<h3 class="contact-info-title">Email</h3>
+						<p class="contact-info-text">
+							Technosistemas8650@protonmail.com<br>
+						Soportetecnico.8650technosistemas
+                                 @protonmail.com<br>
+							
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Sección del formulario chimba -->
+	<div class="contact-form-section">
+		<!-- Partículas animadas -->
+		<div class="particles"></div>
+		
+		<div class="container">
+			<div class="form-container-chimba">
+				<!-- Decoraciones -->
+				<div class="decoration-chimba decoration-1-chimba"></div>
+				<div class="decoration-chimba decoration-2-chimba"></div>
+				
+				<h2 class="form-title-chimba">¡Escríbenos!</h2>
+				<p class="form-subtitle-chimba">Estamos aquí para ayudarte y responder tus preguntas</p>
+				
+				<form id="contactFormChimba" action="https://formspree.io/f/mnnzolkr" method="POST">
+					<div class="form-group-chimba">
+						<input type="text" name="name" class="form-input-chimba" placeholder="Tu nombre completo" required>
+						<div class="form-icon-chimba">👤</div>
+					</div>
+					
+					<div class="form-group-chimba">
+						<input type="email" name="email" class="form-input-chimba" placeholder="tu@email.com" required>
+						<div class="form-icon-chimba">📧</div>
+					</div>
+					
+					<div class="form-group-chimba">
+						<input type="tel" name="phone" class="form-input-chimba" placeholder="Tu teléfono">
+						<div class="form-icon-chimba">📱</div>
+					</div>
+					
+					<div class="form-group-chimba">
+						<input type="text" name="subject" class="form-input-chimba" placeholder="Asunto del mensaje" required>
+						<div class="form-icon-chimba">💭</div>
+					</div>
+					
+					<div class="form-group-chimba">
+						<textarea name="message" class="form-input-chimba" placeholder="Escribe tu mensaje aquí..." required></textarea>
+						<div class="form-icon-chimba" style="top: 20px;">✍️</div>
+					</div>
+					
+					<!-- Campos ocultos para mejor organización del email -->
+					<input type="hidden" name="_subject" value="Nuevo mensaje desde el formulario de contacto">
+					<input type="hidden" name="_next" value="">
+					<input type="hidden" name="_captcha" value="false">
+					
+					<button type="submit" class="submit-btn-chimba">
+						Enviar Mensaje
+					</button>
+					
+					<div class="success-message-chimba" id="successMessageChimba">
+						¡Mensaje enviado correctamente! Te responderemos pronto 🚀
+					</div>
+					
+					<div class="error-message-chimba" id="errorMessageChimba">
+						Hubo un problema al enviar el mensaje. Por favor intenta de nuevo.
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">		
+		<img src="images/border.png" alt="Border" class="templatemo-border">
+	</div>
+	
+	<footer class="templatemo-footer margin-top-50">
+		<div class="container">
+			<p class="text-uppercase small templatemo-copyright">Derechos Reservados © TECHNOSISTEMAS| 2025 | <a href="#">Colombia</a></p>
+			<img src="images/go-to-top.png" alt="Go to top" class="img-responsive tm-go-to-top">
+		</div>		
+	</footer>
+
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/templatemo_script.js"></script>
+	
+	<script>
+        // Crear partículas animadas
+        function createParticles() {
+            const particles = document.querySelector('.particles');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                particles.appendChild(particle);
+            }
+        }
+
+        // Efecto ripple en el botón
+        function addRippleEffect() {
+            const btn = document.querySelector('.submit-btn-chimba');
+            btn.addEventListener('click', function(e) {
+                this.classList.add('clicked');
+                setTimeout(() => {
+                    this.classList.remove('clicked');
+                }, 600);
+            });
+        }
+
+        // Manejo del formulario con Formspree
+        function handleForm() {
+            const form = document.getElementById('contactFormChimba');
+            const successMessage = document.getElementById('successMessageChimba');
+            const errorMessage = document.getElementById('errorMessageChimba');
+            
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                // Obtener el botón y cambiar estado
+                const btn = form.querySelector('.submit-btn-chimba');
+                const originalText = btn.textContent;
+                
+                btn.textContent = 'Enviando...';
+                btn.style.background = 'linear-gradient(135deg, #2196F3, #1976D2)';
+                btn.disabled = true;
+                
+                // Ocultar mensajes anteriores
+                successMessage.classList.remove('show');
+                errorMessage.classList.remove('show');
+                
+                try {
+                    // Enviar datos a Formspree
+                    const formData = new FormData(form);
+                    
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        // Éxito
+                        btn.textContent = '¡Enviado!';
+                        btn.style.background = 'linear-gradient(135deg, #4CAF50, #45a049)';
+                        successMessage.classList.add('show');
+                        
+                        // Limpiar formulario
+                        form.reset();
+                        
+                        // Restaurar botón después de 3 segundos
+                        setTimeout(() => {
+                            btn.textContent = originalText;
+                            btn.style.background = 'linear-gradient(135deg, #ff6b6b, #ffa500)';
+                            btn.disabled = false;
+                        }, 3000);
+                        
+                        // Ocultar mensaje de éxito después de 8 segundos
+                        setTimeout(() => {
+                            successMessage.classList.remove('show');
+                        }, 8000);
+                        
+                    } else {
+                        throw new Error('Error en el envío');
+                    }
+                    
+                } catch (error) {
+                    // Error
+                    btn.textContent = 'Error - Reintentar';
+                    btn.style.background = 'linear-gradient(135deg, #f44336, #d32f2f)';
+                    errorMessage.classList.add('show');
+                    
+                    // Restaurar botón después de 3 segundos
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.style.background = 'linear-gradient(135deg, #ff6b6b, #ffa500)';
+                        btn.disabled = false;
+                    }, 3000);
+                    
+                    // Ocultar mensaje de error después de 6 segundos
+                    setTimeout(() => {
+                        errorMessage.classList.remove('show');
+                    }, 6000);
+                }
+            });
+        }
+
+        // Animaciones de entrada para los inputs
+        function animateInputs() {
+            const inputs = document.querySelectorAll('.form-input-chimba');
+            inputs.forEach((input, index) => {
+                input.style.opacity = '0';
+                input.style.transform = 'translateX(-50px)';
+                
+                setTimeout(() => {
+                    input.style.transition = 'all 0.5s ease';
+                    input.style.opacity = '1';
+                    input.style.transform = 'translateX(0)';
+                }, index * 200);
+            });
+        }
+
+        // Efecto de typing en el placeholder
+        function typingEffect() {
+            const inputs = document.querySelectorAll('.form-input-chimba');
+            inputs.forEach(input => {
+                const originalPlaceholder = input.placeholder;
+                
+                input.addEventListener('focus', () => {
+                    if (input.value === '') {
+                        input.placeholder = '';
+                        let i = 0;
+                        const typing = setInterval(() => {
+                            input.placeholder += originalPlaceholder[i];
+                            i++;
+                            if (i >= originalPlaceholder.length) {
+                                clearInterval(typing);
+                            }
+                        }, 50);
+                    }
+                });
+                
+                input.addEventListener('blur', () => {
+                    if (input.value === '') {
+                        input.placeholder = originalPlaceholder;
+                    }
+                });
+            });
+        }
+
+        // Animación de las tarjetas de información
+        function animateCards() {
+            const cards = document.querySelectorAll('.contact-info-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'all 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        }
+
+        // Inicializar todo
+        window.addEventListener('load', () => {
+            createParticles();
+            addRippleEffect();
+            handleForm();
+            animateInputs();
+            typingEffect();
+            animateCards();
+        });
+
+        // Efecto parallax suave
+        window.addEventListener('mousemove', (e) => {
+            const container = document.querySelector('.form-container-chimba');
+            if (container) {
+                const x = (e.clientX - window.innerWidth / 2) / 100;
+                const y = (e.clientY - window.innerHeight / 2) / 100;
+                
+                container.style.transform = `translate(${x}px, ${y}px)`;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--
+        Pro Audio
+        http://www.templatemo.com/preview/templatemo_429_pro_audio
+    -->
+    <title>NUESTROS SERVICIOS</title>
+    <link rel="icon" type="image/png" href="images/LOGO TIPO 2-Photoroom.png">
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/templatemo_style.css" rel="stylesheet" type="text/css" />
+    <!-- CSS del slider -->
+    <link rel="stylesheet" href="css/galeria.css" />
+    <style>
+      /* Estilos originales de los planes */
+      .plan-section {
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+      .plan-title {
+        text-align: center;
+        font-size: 2em;
+        margin-bottom: 30px;
+        font-weight: bold;
+      }
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .card {
+        background: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 10px;
+        max-width: 300px;
+        width: 100%;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      }
+      .card h3 {
+        text-align: center;
+        margin-bottom: 15px;
+        color: #ffd700;
+      }
+      .price {
+        text-align: center;
+        font-size: 2em;
+        margin-bottom: 15px;
+        color: #00ffff;
+        font-weight: bold;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 20px;
+      }
+      ul li {
+        margin: 10px 0;
+        padding-left: 25px;
+        position: relative;
+        font-size: 1.1em;
+      }
+      ul li:before {
+        content: "✔️";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .btn-whatsapp {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        background-color: #00ffff;
+        color: #222;
+        text-align: center;
+        border-radius: 8px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: background 0.3s, transform 0.2s;
+      }
+      .btn-whatsapp:hover {
+        background-color: #00cccc;
+        transform: scale(1.05);
+        color: #222;
+        text-decoration: none;
+      }
+
+      /* Estilos de Adobe */
+      .adobe-section {
+        text-align: center;
+        padding: 50px 20px;
+        background: transparent;
+      }
+      .adobe-title {
+        font-size: 2.5em;
+        color: #000;
+        margin-bottom: 30px;
+        font-weight: bold;
+      }
+      .adobe-logos {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 25px;
+      }
+      .adobe-logo {
+        width: 100px;
+        height: 100px;
+        border-radius: 20px;
+        overflow: hidden;
+        cursor: pointer;
+        position: relative;
+        animation: float 3s ease-in-out infinite;
+        transition: transform 0.4s ease, filter 0.4s ease;
+      }
+      .adobe-logo:hover {
+        transform: rotate(12deg) scale(1.15);
+        filter: brightness(1.3);
+        animation-play-state: paused;
+      }
+      .adobe-logo svg {
+        width: 100%;
+        height: 100%;
+      }
+      .adobe-logo::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 20px;
+        box-shadow: 0 0 15px rgba(255,255,255,0.3);
+        animation: glow 2s infinite alternate;
+        pointer-events: none;
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+      }
+      @keyframes glow {
+        0% { box-shadow: 0 0 10px rgba(255,255,255,0.3); }
+        100% { box-shadow: 0 0 35px rgba(255,255,255,0.9); }
+      }
+
+      /* NUEVOS ESTILOS - FLYER SOPORTE TÉCNICO */
+      .tech-support-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 50px 0;
+        padding: 20px;
+      }
+
+      .flyer {
+        width: 400px;
+        height: 600px;
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        position: relative;
+        overflow: hidden;
+        animation: float-flyer 3s ease-in-out infinite;
+      }
+
+      @keyframes float-flyer {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+      }
+
+      .header {
+        background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+        height: 120px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .header::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+        animation: shimmer 3s linear infinite;
+      }
+
+      @keyframes shimmer {
+        0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+        100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+      }
+
+      .computer-icon {
+        width: 60px;
+        height: 60px;
+        background: white;
+        border-radius: 10px;
+        position: relative;
+        animation: pulse 2s infinite;
+        z-index: 2;
+      }
+
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+      }
+
+      .computer-icon::before {
+        content: '💻';
+        font-size: 30px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .title {
+        color: white;
+        text-align: center;
+        padding: 20px;
+        background: rgba(0,0,0,0.1);
+      }
+
+      .title h1 {
+        font-size: 24px;
+        margin-bottom: 5px;
+        animation: glow-text 2s ease-in-out infinite alternate;
+      }
+
+      @keyframes glow-text {
+        from { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #4ecdc4; }
+        to { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #4ecdc4; }
+      }
+
+      .subtitle {
+        font-size: 14px;
+        opacity: 0.9;
+      }
+
+      .services {
+        padding: 20px;
+        color: white;
+      }
+
+      .service-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        padding: 10px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 10px;
+        transform: translateX(-100%);
+        animation: slideIn 0.5s forwards;
+        transition: all 0.3s ease;
+      }
+
+      .service-item:nth-child(1) { animation-delay: 0.2s; }
+      .service-item:nth-child(2) { animation-delay: 0.4s; }
+      .service-item:nth-child(3) { animation-delay: 0.6s; }
+      .service-item:nth-child(4) { animation-delay: 0.8s; }
+
+      @keyframes slideIn {
+        to { transform: translateX(0); }
+      }
+
+      .service-item:hover {
+        background: rgba(255,255,255,0.2);
+        transform: translateX(5px);
+      }
+
+      .service-icon {
+        font-size: 20px;
+        margin-right: 10px;
+        animation: rotate 4s linear infinite;
+      }
+
+      @keyframes rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+
+      .service-text {
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .contact-section {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+        padding: 20px;
+        text-align: center;
+        color: white;
+      }
+
+      .contact-button {
+        background: white;
+        color: #2a5298;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 25px;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        animation: bounce 2s infinite;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+        40% { transform: translateY(-10px); }
+        60% { transform: translateY(-5px); }
+      }
+
+      .contact-button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        background: #25D366;
+        color: white;
+        text-decoration: none;
+      }
+
+      .phone, .email {
+        font-size: 12px;
+        margin: 5px 0;
+        opacity: 0.9;
+      }
+
+      .floating-elements {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        overflow: hidden;
+      }
+
+      .floating-element {
+        position: absolute;
+        color: rgba(255,255,255,0.1);
+        font-size: 20px;
+        animation: floatRandom 6s linear infinite;
+      }
+
+      .floating-element:nth-child(1) {
+        left: 10%;
+        animation-delay: 0s;
+        animation-duration: 8s;
+      }
+
+      .floating-element:nth-child(2) {
+        left: 80%;
+        animation-delay: 2s;
+        animation-duration: 10s;
+      }
+
+      .floating-element:nth-child(3) {
+        left: 50%;
+        animation-delay: 4s;
+        animation-duration: 7s;
+      }
+
+      @keyframes floatRandom {
+        0% {
+          transform: translateY(100vh) rotate(0deg);
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        90% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-100px) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      .sparkle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: white;
+        border-radius: 50%;
+        animation: sparkle 1.5s linear infinite;
+      }
+
+      @keyframes sparkle {
+        0%, 100% { opacity: 0; transform: scale(0); }
+        50% { opacity: 1; transform: scale(1); }
+      }
+
+      .sparkle:nth-child(1) {
+        top: 20%;
+        left: 20%;
+        animation-delay: 0s;
+      }
+
+      .sparkle:nth-child(2) {
+        top: 40%;
+        right: 15%;
+        animation-delay: 0.5s;
+      }
+
+      .sparkle:nth-child(3) {
+        bottom: 30%;
+        left: 10%;
+        animation-delay: 1s;
+      }
+
+      /* NUEVO: Botón flotante de WhatsApp */
+      .whatsapp-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 20px;
+        right: 20px;
+        background-color: #25D366;
+        color: white;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
+        z-index: 1000;
+        animation: pulse-whatsapp 2s infinite;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+      }
+
+      .whatsapp-float:hover {
+        background-color: #128C7E;
+        transform: scale(1.1);
+        color: white;
+        text-decoration: none;
+      }
+
+      @keyframes pulse-whatsapp {
+        0% {
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+        }
+      }
+
+      /* Mejorar los enlaces de WhatsApp con iconos */
+      .btn-whatsapp::before {
+        content: "📱 ";
+        margin-right: 5px;
+      }
+
+      /* Notificación de éxito */
+      .notification {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #25D366;
+        color: white;
+        padding: 15px 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        z-index: 1001;
+        transform: translateX(400px);
+        transition: transform 0.3s ease;
+      }
+
+      .notification.show {
+        transform: translateX(0);
+      }
+
+      @media(max-width: 992px){
+        .row {
+          flex-direction: column;
+          align-items: center;
+        }
+        .card {
+          max-width: 90%;
+        }
+        .flyer {
+          width: 350px;
+          height: 500px;
+        }
+        .whatsapp-float {
+          width: 50px;
+          height: 50px;
+          font-size: 25px;
+        }
+      }
+    </style>
+</head>
+<body>
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/573186711378?text=¡Hola!%20Necesito%20soporte%20técnico%20para%20mi%20computador" 
+       class="whatsapp-float" 
+       target="_blank" 
+       onclick="showNotification('Abriendo WhatsApp...')">
+        📱
+    </a>
+
+    <!-- Notificación -->
+    <div id="notification" class="notification">
+        <span id="notification-text"></span>
+    </div>
+
+    <nav id="responsive-menu">
+        <ul class="menu-holder">
+            <li><a href="Principal.html"><i class="fa fa-home"></i>INICIO</a></li>
+            <li><a href="Quienes somos.html"><i class="fa fa-briefcase"></i>QUIENES SOMOS</a></li>
+            <li><a href="Nuestros servicios.html"><i class="fa fa-cogs"></i>NUESTROS SERVICIOS</a></li>
+            <li><a href="Convenios.html"><i class="fa fa-list"></i>CONVENIOS</a></li>
+            <li><a href="Contacto.html"><i class="fa fa-briefcase"></i>CONTACTO</a></li>
+        </ul>
+    </nav>
+    
+    <div class="templatemo-header">        
+        <div class="templatemo-header-gradient-bg"></div>
+        <div class="container">            
+            <h1 class="text-center text-uppercase templatemo-site-name"><span class="blue">NUESTROS</span> SERVICIOS</h1>
+            <nav class="hidden-xs text-center text-uppercase templatemo-nav">
+                <ul class="menu-holder">
+                    <li class="active"><a href="Principal.html">INICIO</a></li>
+                    <li><a href="Quienes somos.html">QUIENES SOMOS</a></li>
+                    <li><a href="Nuestros servicios.html">NUESTROS SERVICIOS</a></li>
+                    <li><a href="Convenios.html">CONVENIOS</a></li>
+                    <li><a href="Contacto.html">CONTACTO</a></li>
+                </ul>
+            </nav>
+            <div class="text-right visible-xs">
+                <a href="#" id="mobile_menu"><span class="fa fa-bars"></span></a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="templatemo-header-image"></div>
+    <img src="images/LOGO-TIPO-TECHNOSISTEMAS.jpg" width="250" height="250" alt="">
+    
+
+    <div class="container">
+        <section id="home" class="templatemo-section">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    
+                  
+                </div>
+            </div>
+            <img src="images/border.png" alt="Border" class="templatemo-border">
+        </section>
+
+        <!-- NUEVA SECCIÓN - FLYER SOPORTE TÉCNICO -->
+        <div class="tech-support-section">
+            <div class="flyer">
+                <div class="floating-elements">
+                    <div class="floating-element">🔧</div>
+                    <div class="floating-element">⚙️</div>
+                    <div class="floating-element">🖥️</div>
+                    <div class="sparkle"></div>
+                    <div class="sparkle"></div>
+                    <div class="sparkle"></div>
+                </div>
+
+                <div class="header">
+                    <div class="computer-icon"></div>
+                </div>
+
+                <div class="title">
+                    <h1>SOPORTE TÉCNICO</h1>
+                    <div class="subtitle">Computadores & Tecnología</div>
+                </div>
+
+                <div class="services">
+                    <div class="service-item">
+                        <div class="service-icon">🔧</div>
+                        <div class="service-text">Reparación de Hardware</div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon">💾</div>
+                        <div class="service-text">Instalación de Software</div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon">🛡️</div>
+                        <div class="service-text">Eliminación de Virus</div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon">🌐</div>
+                        <div class="service-text">Configuración de Redes</div>
+                    </div>
+                </div>
+
+                <div class="contact-section">
+                    <a href="https://wa.me/573186711378?text=¡Hola!%20Necesito%20soporte%20técnico%20especializado%20para%20mi%20computador.%20¿Pueden%20ayudarme?" 
+                       class="contact-button" 
+                       target="_blank"
+                       onclick="showNotification('🚀 Conectando con WhatsApp...')">
+                        ¡CONTACTANOS AHORA!
+                    </a>
+                    <div class="phone">📱 +57 318 671 1378</div>
+                    <div class="email">📧 soporte@technosistemas.com</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sección de Planes -->
+        <div class="plan-section">
+          <div class="plan-title">Nuestros Planes de Hosting</div>
+          <div class="row">
+
+            <!-- Plan Básico -->
+            <div class="card" style="border-top:5px solid #ffd700;">
+              <h3>Plan Básico</h3>
+              <div class="price">$1.700.000</div>
+              <ul>
+                <li>Almacenamiento 50GB</li>
+                <li>1 Dominio incluido</li>
+                <li>Soporte 24/7</li>
+                <li>Certificado SSL</li>
+              </ul>
+              <a href="https://wa.me/573186711378?text=¡Hola!%20Estoy%20interesado%20en%20el%20*Plan%20Básico*%20de%20hosting%20por%20$1.700.000.%20¿Pueden%20darme%20más%20información?" target="_blank" class="btn-whatsapp" onclick="showNotification('📦 Consultando Plan Básico...')">Contratar</a>
+            </div>
+
+            <!-- Plan Estándar -->
+            <div class="card" style="border-top:5px solid #ff7f50;">
+              <h3>Plan Estándar</h3>
+              <div class="price">$2.200.000</div>
+              <ul>
+                <li>Almacenamiento 150GB</li>
+                <li>3 Dominios</li>
+                <li>Soporte Prioritario</li>
+                <li>SSL Premium</li>
+                <li>Backup diario</li>
+              </ul>
+              <a href="https://wa.me/573186711378?text=¡Hola!%20Estoy%20interesado%20en%20el%20*Plan%20Estándar*%20de%20hosting%20por%20$2.200.000.%20¿Pueden%20darme%20más%20información?" target="_blank" class="btn-whatsapp" onclick="showNotification('⚡ Consultando Plan Estándar...')">Contratar</a>
+            </div>
+
+            <!-- Plan Premium -->
+            <div class="card" style="border-top:5px solid #32cd32;">
+              <h3>Plan Premium</h3>
+              <div class="price">$2.500.000</div>
+              <ul>
+                <li>Ilimitado almacenamiento</li>
+                <li>Ilimitados dominios</li>
+                <li>Soporte 24/7 y gestor</li>
+                <li>SSL y CDN incluido</li>
+                <li>Backups diarios</li>
+                <li>Optimización avanzada</li>
+              </ul>
+              <a href="https://wa.me/573186711378?text=¡Hola!%20Estoy%20interesado%20en%20el%20*Plan%20Premium*%20de%20hosting%20por%20$2.500.000.%20¿Pueden%20darme%20más%20información?" target="_blank" class="btn-whatsapp" onclick="showNotification('👑 Consultando Plan Premium...')">Contratar</a>
+            </div>
+
+        </div>
+        <img src="images/border.png" alt="Border" class="templatemo-border">
+
+        <div class="adobe-section">
+          <div class="adobe-title">Diseño Grafico para toda ocasión a tu gusto personalizado vip y a tu tiempo con Adobe</div>
+          <div class="adobe-title">Portafolios de servicios $150.000</div>
+          <div class="adobe-title">Tarjeta de visita $75.000</div>
+          <div class="adobe-title">Carnets tipo pvc $16.000</div>
+          <div class="adobe-title">Logo Tpo $16.000 Esto va a depender de la cantidad de logos que necesites</div>
+          <div class="adobe-logos">
+            <!-- Photoshop -->
+            <div class="adobe-logo">
+              <svg viewBox="0 0 256 256"><rect width="256" height="256" fill="#001E36"/><text x="50%" y="55%" fill="#31A8FF" font-family="Arial" font-size="120" text-anchor="middle" dominant-baseline="middle">Ps</text></svg>
+            </div>
+            <!-- Illustrator -->
+            <div class="adobe-logo">
+              <svg viewBox="0 0 256 256"><rect width="256" height="256" fill="#330000"/><text x="50%" y="55%" fill="#FF9A00" font-family="Arial" font-size="120" text-anchor="middle" dominant-baseline="middle">Ai</text></svg>
+            </div>
+            <!-- Premiere -->
+            <div class="adobe-logo">
+              <svg viewBox="0 0 256 256"><rect width="256" height="256" fill="#1A0B2E"/><text x="50%" y="55%" fill="#EA77FF" font-family="Arial" font-size="110" text-anchor="middle" dominant-baseline="middle">Pr</text></svg>
+            </div>
+            <!-- After Effects -->
+            <div class="adobe-logo">
+              <svg viewBox="0 0 256 256"><rect width="256" height="256" fill="#1B0536"/><text x="50%" y="55%" fill="#D291FF" font-family="Arial" font-size="110" text-anchor="middle" dominant-baseline="middle">Ae</text></svg>
+            </div>
+            <!-- XD -->
+            <div class="adobe-logo">
+              <svg viewBox="0 0 256 256"><rect width="256" height="256" fill="#2E001F"/><text x="50%" y="55%" fill="#FF61F6" font-family="Arial" font-size="110" text-anchor="middle" dominant-baseline="middle">Xd</text></svg>
+            </div>
+            <!-- Lightroom -->
+            <div class="adobe-logo">
+              <svg viewBox="0 0 256 256"><rect width="256" height="256" fill="#112B3C"/><text x="50%" y="55%" fill="#00C8FF" font-family="Arial" font-size="110" text-anchor="middle" dominant-baseline="middle">Lr</text></svg>
+            </div>
+          </div>
+          <img src="images/border.png" alt="Border" class="templatemo-border">
+        </div>
+
+    </div>
+
+    <footer class="templatemo-footer margin-top-50">
+        <div class="container">
+            <p class="text-uppercase small templatemo-copyright">Derechos Reservados © TECHNOSISTEMAS| 2025 | <a href="#">Colombia</a></p>
+            <img src="images/go-to-top.png" alt="Go to top" class="img-responsive tm-go-to-top" />
+        </div>
+    </footer>
+
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/templatemo_script.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        // NUEVA FUNCIÓN: Mostrar notificaciones
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            const text = document.getElementById('notification-text');
+            text.textContent = message;
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+
+        // FUNCIÓN MEJORADA: Contacto directo por WhatsApp
+        function contactarSoporteWhatsApp() {
+            const numero = "573186711378";
+            const mensaje = "¡Hola! Necesito soporte técnico especializado para mi computador. ¿Pueden ayudarme?";
+            const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+            
+            showNotification('🚀 Conectando con WhatsApp...');
+            window.open(url, '_blank');
+            
+            return false; // Prevenir comportamiento por defecto
+        }
+
+        // Función alternativa para diferentes servicios
+        function contactarWhatsAppServicio(servicio, precio = '') {
+            const numero = "573186711378";
+            let mensaje = `¡Hola! Estoy interesado en el servicio de ${servicio}.`;
+            
+            if (precio) {
+                mensaje += ` Vi que tiene un precio de ${precio}.`;
+            }
+            
+            mensaje += " ¿Pueden darme más información?";
+            
+            const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+            window.open(url, '_blank');
+            return false;
+        }
+
+        // Función específica para diseño gráfico
+        function contactarDisenoGrafico(tipo, precio) {
+            const numero = "573186711378";
+            const mensaje = `¡Hola! Me interesa el servicio de *${tipo}* por ${precio}. ¿Pueden mostrarme ejemplos de trabajos realizados?`;
+            const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+            
+            showNotification(`🎨 Consultando ${tipo}...`);
+            window.open(url, '_blank');
+            return false;
+        }
+
+        // Agregar más elementos flotantes dinámicamente
+        function createFloatingElement() {
+            const elements = ['⚡', '🔌', '📱', '💻', '⌨️', '🖱️'];
+            const element = document.createElement('div');
+            element.className = 'floating-element';
+            element.textContent = elements[Math.floor(Math.random() * elements.length)];
+            element.style.left = Math.random() * 100 + '%';
+            element.style.animationDuration = (Math.random() * 5 + 5) + 's';
+            element.style.animationDelay = Math.random() * 2 + 's';
+            
+            const container = document.querySelector('.floating-elements');
+            if (container) {
+                container.appendChild(element);
+                
+                setTimeout(() => {
+                    if (element.parentNode) {
+                        element.remove();
+                    }
+                }, 12000);
+            }
+        }
+
+        // Crear nuevos elementos flotantes cada 3 segundos
+        setInterval(createFloatingElement, 3000);
+
+        // Efecto de hover mejorado para el botón principal
+        const button = document.querySelector('.contact-button');
+        if (button) {
+            button.addEventListener('mouseenter', function() {
+                this.style.background = 'linear-gradient(45deg, #ff6b6b, #4ecdc4)';
+                this.style.color = 'white';
+            });
+
+            button.addEventListener('mouseleave', function() {
+                this.style.background = 'white';
+                this.style.color = '#2a5298';
+            });
+        }
+
+        // Función para rastrear clics en botones de WhatsApp
+        function trackWhatsAppClick(plan) {
+            console.log(`Usuario interesado en: ${plan}`);
+            // Aquí podrías enviar datos a Google Analytics o similar
+        }
+
+        // Agregar funcionalidad a los logos de Adobe
+        document.addEventListener('DOMContentLoaded', function() {
+            const adobeLogos = document.querySelectorAll('.adobe-logo');
+            adobeLogos.forEach(logo => {
+                logo.addEventListener('click', function() {
+                    const softwareName = this.querySelector('text').textContent;
+                    contactarWhatsAppServicio(`diseño con Adobe ${softwareName}`);
+                });
+            });
+        });
+
+        // Funciones específicas para cada servicio de diseño
+        function consultarPortafolio() {
+            contactarDisenoGrafico('Portafolios de servicios', '150.000');
+        }
+
+        function consultarTarjetas() {
+            contactarDisenoGrafico('Tarjetas de visita', '75.000');
+        }
+
+        function consultarCarnets() {
+            contactarDisenoGrafico('Carnets tipo PVC', '16.000');
+        }
+
+        function consultarLogos() {
+            contactarDisenoGrafico('Logo Tipo', '16.000');
+        }
+
+        // Detectar si el usuario está en móvil para optimizar la experiencia
+        function isMobile() {
+            return window.innerWidth <= 768;
+        }
+
+        // Optimizar enlaces de WhatsApp para móvil
+        function optimizeWhatsAppLinks() {
+            const whatsappLinks = document.querySelectorAll('a[href*="wa.me"]');
+            whatsappLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (isMobile()) {
+                        // En móvil, usar la aplicación de WhatsApp directamente
+                        const href = this.getAttribute('href');
+                        const whatsappURL = href.replace('https://wa.me/', 'whatsapp://send?phone=');
+                        
+                        // Intentar abrir la app, si falla usar el navegador
+                        const tempLink = document.createElement('a');
+                        tempLink.href = whatsappURL;
+                        tempLink.click();
+                        
+                        // Fallback al navegador después de 2 segundos
+                        setTimeout(() => {
+                            window.open(href, '_blank');
+                        }, 2000);
+                    }
+                });
+            });
+        }
+
+        // Inicializar optimizaciones cuando se carga la página
+        document.addEventListener('DOMContentLoaded', function() {
+            optimizeWhatsAppLinks();
+            
+            // Mostrar mensaje de bienvenida después de 3 segundos
+            setTimeout(() => {
+                showNotification('💬 ¿Necesitas ayuda? Usa el botón de WhatsApp');
+            }, 3000);
+        });
+
+        // Agregar efectos de sonido (opcional)
+        function playClickSound() {
+            // Crear un sonido sutil para los clics (solo si el navegador lo permite)
+            const audioContext = window.AudioContext || window.webkitAudioContext;
+            if (audioContext) {
+                const context = new audioContext();
+                const oscillator = context.createOscillator();
+                const gainNode = context.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(context.destination);
+                
+                oscillator.frequency.value = 800;
+                oscillator.type = 'sine';
+                
+                gainNode.gain.setValueAtTime(0.1, context.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, context.currentTime + 0.1);
+                
+                oscillator.start();
+                oscillator.stop(context.currentTime + 0.1);
+            }
+        }
+
+        // Agregar el sonido a los botones principales
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainButtons = document.querySelectorAll('.contact-button, .btn-whatsapp, .whatsapp-float');
+            mainButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    playClickSound();
+                });
+            });
+        });
+    </script>
+
+    <!-- Script adicional para mejorar los servicios de diseño -->
+    <script>
+        // Crear botones interactivos para los servicios de diseño gráfico
+        document.addEventListener('DOMContentLoaded', function() {
+            const adobeSection = document.querySelector('.adobe-section');
+            
+            // Crear contenedor de botones para servicios
+            const buttonsContainer = document.createElement('div');
+            buttonsContainer.style.cssText = `
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 15px;
+                margin-top: 30px;
+            `;
+            
+            // Servicios de diseño con precios
+            const servicios = [
+                { nombre: 'Portafolios de servicios', precio: '150.000', emoji: '📁' },
+                { nombre: 'Tarjetas de visita', precio: '75.000', emoji: '💳' },
+                { nombre: 'Carnets tipo PVC', precio: '16.000', emoji: '🆔' },
+                { nombre: 'Logo Tipo', precio: '16.000', emoji: '🎨' }
+            ];
+            
+            servicios.forEach(servicio => {
+                const button = document.createElement('button');
+                button.style.cssText = `
+                    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+                    color: white;
+                    border: none;
+                    padding: 12px 20px;
+                    border-radius: 25px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    font-size: 14px;
+                    transition: all 0.3s ease;
+                    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+                `;
+                
+                button.innerHTML = `${servicio.emoji} ${servicio.nombre} - ${servicio.precio}`;
+                
+                button.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.05)';
+                    this.style.boxShadow = '0 6px 12px rgba(0,0,0,0.3)';
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                    this.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
+                });
+                
+                button.addEventListener('click', function() {
+                    contactarDisenoGrafico(servicio.nombre, servicio.precio);
+                });
+                
+                buttonsContainer.appendChild(button);
+            });
+            
+            // Insertar los botones después de los logos de Adobe
+            const adobeLogos = document.querySelector('.adobe-logos');
+            adobeLogos.parentNode.insertBefore(buttonsContainer, adobeLogos.nextSibling);
+        });
+    </script>
+</body>
+</html>

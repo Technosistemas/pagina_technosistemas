@@ -1,0 +1,326 @@
+/* ESTILOS DEL SLIDER INTEGRADO - NO AFECTAN EL DISEÑO EXISTENTE */
+
+.video-slider-wrapper {
+    width: 100%;
+    margin: 40px 0;
+    padding: 0;
+}
+
+.slider-container-integrated {
+    width: 100%;
+    max-width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative; /* Evita problemas de posicionamiento */
+    z-index: 1; /* Z-index bajo para no interferir */
+}
+
+.slider-title-integrated {
+    text-align: center;
+    color: #333;
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.video-slider {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.video-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    width: 500%; /* 5 videos × 100% */
+}
+
+.video-slide {
+    width: 20%; /* 100% / 5 videos */
+    flex-shrink: 0;
+    position: relative;
+}
+
+.video-slide video {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    border-radius: 15px;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 25px;
+    border-radius: 15px;
+    z-index: 2;
+}
+
+.video-info h3 {
+    color: white;
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-family: inherit;
+}
+
+.video-info p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    line-height: 1.4;
+    font-family: inherit;
+}
+
+/* Controles de navegación */
+.slider-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+    position: relative;
+    z-index: 3;
+}
+
+.nav-btn {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.nav-btn:hover {
+    background: rgba(0, 0, 0, 0.7);
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.nav-btn:active {
+    transform: scale(0.95);
+}
+
+.nav-btn::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.nav-btn.prev::before {
+    border-width: 8px 12px 8px 0;
+    border-color: transparent white transparent transparent;
+    margin-right: 2px;
+}
+
+.nav-btn.next::before {
+    border-width: 8px 0 8px 12px;
+    border-color: transparent transparent transparent white;
+    margin-left: 2px;
+}
+
+/* Indicadores */
+.slider-indicators {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.indicator.active {
+    background: #333;
+    transform: scale(1.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.indicator:hover {
+    background: rgba(0, 0, 0, 0.7);
+    transform: scale(1.1);
+}
+
+/* Botón de play/pause global */
+.play-pause-btn {
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    opacity: 0.8;
+}
+
+.play-pause-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 1;
+}
+
+.play-pause-btn::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 12px 0 12px 20px;
+    border-color: transparent transparent transparent white;
+    margin-left: 4px;
+}
+
+.play-pause-btn.playing::before {
+    border: none;
+    width: 5px;
+    height: 24px;
+    background: white;
+    margin: 0 6px 0 0;
+    box-shadow: 10px 0 0 white;
+}
+
+/* Animaciones */
+@keyframes slideInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.video-slider-wrapper {
+    animation: slideInFromBottom 0.8s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .slider-container-integrated {
+        padding: 20px;
+        margin: 20px 0;
+    }
+
+    .slider-title-integrated {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .video-slide video {
+        height: 280px;
+    }
+
+    .video-info h3 {
+        font-size: 1.3rem;
+    }
+
+    .video-info p {
+        font-size: 0.85rem;
+    }
+
+    .nav-btn {
+        width: 45px;
+        height: 45px;
+    }
+
+    .play-pause-btn {
+        width: 55px;
+        height: 55px;
+    }
+
+    .video-overlay {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-slide video {
+        height: 220px;
+    }
+
+    .slider-title-integrated {
+        font-size: 1.5rem;
+    }
+
+    .slider-container-integrated {
+        padding: 15px;
+    }
+
+    .nav-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .play-pause-btn {
+        width: 50px;
+        height: 50px;
+    }
+
+    .indicator {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+/* Asegurar que no interfiera con otros elementos de la página */
+.video-slider-wrapper * {
+    box-sizing: border-box;
+}
+
+/* Reseteo específico para evitar conflictos con Bootstrap */
+.video-slider-wrapper .nav-btn {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: 1;
+}
+
+.video-slider-wrapper .indicator {
+    display: block;
+    float: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Evitar conflictos con estilos existentes */
+.video-slider-wrapper .slider-controls {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
